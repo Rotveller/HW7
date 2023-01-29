@@ -111,8 +111,27 @@ public class Main {
             }
         }
         System.out.println("Task7");
-        int firstFriday = 6;
-        for (int friday = firstFriday; friday <= 31; friday+=7){
-            System.out.println("Сегодня пятница " + friday + " -e число. Необходимо подготовить отчёт");}
-}
+        int firstFriday = 1;
+        for (int friday = firstFriday; friday <= 31; friday += 7) {
+            System.out.println("Сегодня пятница " + friday + " -e число. Необходимо подготовить отчёт");
+        }
+        //Нам нужно написать астрономическое приложение, которое считает, когда над Землей пролетает комета.
+        //Известно, что комета пролетает каждый 79-й год, начиная с нулевого.
+        //В консоль нужно вывести все годы за последние 200 лет,
+        // когда появлялась комета, а также следующий год ее появления (ближайшие 100 лет).
+        //Для вычисления периода можно создать две дополнительные
+        // переменные, которые содержат год за 200 лет до текущего
+        // (из созданной ранее переменной) в качестве старта и 100 лет после в качестве завершения периода расчета.
+        //В результате решения задачи в консоли должен получиться следующий результат:1896,1975,2054
+        System.out.println("Task8");
+        int yearComet = 2023;
+        int yearFirst = yearComet - 200;
+        int yearLast = yearComet + 100;
+        int firsTime = 0;
+        for (int dayBoom = firsTime; dayBoom < yearLast; dayBoom += 79) {
+            if (dayBoom >= yearFirst) {
+                System.out.println(dayBoom);
+            }
+        }
+    }
 }
