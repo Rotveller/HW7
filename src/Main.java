@@ -52,12 +52,12 @@ public class Main {
         // «Год …, численность населения составляет …».
         System.out.println("Task3");
         int peopleY = 12_000_000;
-        int b = (peopleY / 1_000) * 17;
-        int d = (peopleY / 1_000) * 8;
+        int b = 17;
+        int d = 8;
         y = 2023;
         do {
             y++;
-            peopleY = peopleY + b - d;
+            peopleY = peopleY + peopleY * (b - d) / 1000;
             System.out.println("Год " + y + " численность населения состовляет= " + peopleY);
         }
         while (y < 2033);
@@ -68,29 +68,51 @@ public class Main {
         //Выведите в консоль результат программы с указанием
         // суммы накоплений по каждому месяцу
         System.out.println("Task4");
-        int PutMoney = 15_000;
+        float PutMoney = 15_000.00f;
         int iY = 0;
-        int totalMoney = 0;
-        int proc = 7 / 12 / 100;
-        while (totalMoney < 12_000_000) {
-            PutMoney = PutMoney + (PutMoney * proc);
-            totalMoney = totalMoney + PutMoney;
+        float totalMoney = 0.0f;
+        float proc = (float) (7.00 / 100.00f);
+        int wanted = 12_000_000;
+        while (totalMoney < wanted) {
+            PutMoney = PutMoney + PutMoney * proc;
+            totalMoney = PutMoney;
             iY++;
-            //if (iY%2==0){
-            System.out.println("Месяц " + iY + "Сумма накоплений" + totalMoney);
+            String str = String.format(" Сумма накоплений = %f", totalMoney);
+            System.out.println(" Месяц " + iY + str);
         }
         System.out.println("Task5");
-        PutMoney = 15_000;
+        PutMoney = 15_000.00f;
         iY = 0;
-        totalMoney = 0;
-        proc = 7 / 12 / 100;
-        while (totalMoney < 12_000_000) {
-            PutMoney = PutMoney + (PutMoney * proc);
-            totalMoney = totalMoney + PutMoney;
+        totalMoney = 0.0f;
+        proc = (float) (7.00 / 100.00f);
+        wanted = 12_000_000;
+        while (totalMoney < wanted) {
+            PutMoney = PutMoney + PutMoney * proc;
+            totalMoney = PutMoney;
             iY++;
+            String str = String.format(" Сумма накоплений = %f", totalMoney);
             if (iY % 6 == 0) {
-                System.out.println("Месяц " + iY + "Сумма накоплений" + totalMoney);
+                System.out.println(" Месяц " + iY + str);
             }
         }
-    }
+        System.out.println("Task6");
+        PutMoney = 15_000.00f;
+        iY = 0;
+        int year = 9 * 12;
+        totalMoney = 0.0f;
+        proc = (float) (7.00 / 100.00f);
+        while (iY < year) {
+            PutMoney = PutMoney + PutMoney * proc;
+            totalMoney = PutMoney;
+            iY++;
+            String str = String.format(" Сумма накоплений = %f", totalMoney);
+            if (iY % 6 == 0) {
+                System.out.println(" Месяц " + iY + str);
+            }
+        }
+        System.out.println("Task7");
+        int firstFriday = 6;
+        for (int friday = firstFriday; friday <= 31; friday+=7){
+            System.out.println("Сегодня пятница " + friday + " -e число. Необходимо подготовить отчёт");}
+}
 }
