@@ -43,10 +43,10 @@ public class Main {
         int iY = 0;
         float totalMoney = 0.0f;
         float proc = (float) (7.00 / 100.00f);
-        int wanted = 12_000_000;
+        float wanted = 12_000_000f;
         while (totalMoney < wanted) {
-            totalMoney = putMoney + putMoney * proc;
-            iY++;
+            iY=iY+1;
+            totalMoney = putMoney + (putMoney * proc);
             String str = String.format(" Сумма накоплений = %f", totalMoney);
             System.out.println(" Месяц " + iY + str);
         }
